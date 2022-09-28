@@ -9,7 +9,6 @@ public class Main {
         //b. Professor Nível 2 R$17,00 por hora/aula;
         //c. Professor Nível 3 R$25,00 por hora/aula.
         float valorHora = 0;
-        float salario;
         Scanner leitor = new Scanner(System.in);
         System.out.print("Digite a hora/aula trabalhada: ");
         float hora = leitor.nextFloat();
@@ -18,18 +17,22 @@ public class Main {
         switch (nivel) {
             case 1:
                 valorHora = 12.00f;
+                result(hora, valorHora);
                 break;
             case 2:
                 valorHora = 17.00f;
+                result(hora, valorHora);
                 break;
             case 3:
                 valorHora = 25.00f;
+                result(hora, valorHora);
                 break;
-            default:
-                System.out.println("Nível incorreto");
-                return;
         }
+    }
+
+    private static void result(float hora, float valorHora) {
+        float salario;
         salario = hora * valorHora;
-        System.out.printf("O salário do professor será de R$%.2f",salario);
+        System.out.printf("O salário do professor será de R$%.2f", salario);
     }
 }
